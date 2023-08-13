@@ -1,0 +1,58 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "Bear Simple GUI", HidePremium = IntroText = "BearHub", false, SaveConfig = true, ConfigFolder = "Bear"})
+
+OrionLib:MakeNotification({
+    Name = "Hello!",
+    Content = "Welcome To My First GUI!",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
+
+local MainTab = Window:MakeTab({
+    Name = "GUI",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local Section = BearTab:AddSection({
+    Name = "Section 1"
+})
+
+BearTab:AddButton({
+    Name = "Cheese Button",
+    Callback = function()
+              print("Cheese")
+      end    
+})
+
+BearTab:AddToggle({
+    Name = "Toggle Button",
+    Default = false,
+    Callback = function(Value)
+        print("Nothing Happened")
+    end    
+})
+
+ColorTab:AddColorpicker({
+    Name = "Colorpicker",
+    Default = Color3.fromRGB(255, 0, 0),
+    Callback = function(Value)
+        print(Value)
+    end      
+})
+
+SliderTab:AddSlider({
+    Name = "Slider",
+    Min = 0,
+    Max = 20,
+    Default = 5,
+    Color = Color3.fromRGB(255,255,255),
+    Increment = 1,
+    ValueName = "Cheese",
+    Callback = function(Value)
+        print(Value)
+    end    
+})
+
+OrionLib:Init()
